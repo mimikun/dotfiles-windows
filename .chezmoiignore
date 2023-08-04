@@ -1,0 +1,11 @@
+.chezmoiignore
+.editorconfig
+.gitignore
+README.md
+TODO.md
+CHANGELOG.md
+Justfile
+LICENSE.txt
+
+scripts
+.github
