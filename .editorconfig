@@ -9,3 +9,6 @@ indent_size = 4
 
 [dot_gitconfig.tmpl]
 indent_style = tab
+
+[Makefile]
+indent_style = tab
