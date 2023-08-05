@@ -34,10 +34,26 @@ copy2win-patch-raw :
 
 copy2win-patch : copy2win-patch-raw
 
-lint : stylua-lint
+# development
+
+test : lint
+
+lint : stylua-lint pwsh_test textlint typo_check
 
 stylua-lint :
     stylua --check .\
+
+pwsh_test :
+        Write-Output "Run PowerShell ScriptAnalyzer"
+        Invoke-ScriptAnalyzer .
+
+textlint :
+        Write-Output "Run textlint"
+        pnpm run lint
+
+typo_check :
+        Write-Output "Run typos-cli"
+        typos .
 
 format : stylua-format
 
@@ -45,3 +61,11 @@ fmt : format
 
 stylua-format :
     stylua .\
+
+# release
+
+copy2win-release : release
+    .\scripts\copy2win-release.ps1
+
+release : 
+    .\scripts\create-release.ps1

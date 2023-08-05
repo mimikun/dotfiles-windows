@@ -4,7 +4,7 @@ $TempMyOutputEncode=[System.Console]::OutputEncoding
 [System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8
 
 
-$repo_name = "dotfiles-windows-for-work"
+$repo_name = "dotfiles-windows"
 $today = Get-Date -UFormat '%Y%m%d'
 $patch_file = "$repo_name.$today.patch"
 
