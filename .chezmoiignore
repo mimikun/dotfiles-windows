@@ -1,11 +1,26 @@
+# dot file
 .chezmoiignore
 .editorconfig
 .gitignore
-README.md
-TODO.md
+.textlintrc.json
+
+# dot dir
+.github
+
+# normal file
 CHANGELOG.md
 Justfile
 LICENSE.txt
+Makefile
+package.json
+pnpm-lock.yaml
+PSScriptAnalyzerSettings.psd1
+README.md
+stylua.toml
+TODO.md
+typos.toml
 
+# normal dir
 scripts
-.github
+AppData/Local/nvim/scripts
+AppData/Local/nvim/Makefile
