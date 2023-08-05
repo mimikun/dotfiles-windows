@@ -36,37 +36,50 @@ Set-Alias -Name bd -Value Set-ParentLocation
 Set-Alias -Name touch -Value New-Item
 
 # alias ls (lsd or exa)
-# alias ls exa
-Set-Alias -Name ls -Value exa
-# ls aliases
-Set-Alias -Name lt -Value "exa -T"
-Set-Alias -Name la -Value "exa -la"
-
+Get-Command exa -ErrorAction Ignore | Out-Null
+$res = $?
+if ($res) {
+    # alias ls exa
+    Set-Alias -Name ls -Value exa
+    # exa aliases
+    Set-Alias -Name lt -Value "exa -T"
+    Set-Alias -Name la -Value "exa -la"
+}
 
 # alias gcd
 $env:PSGhqPath = "$env:GHQ_ROOT\github.com\mimikun\PSGhq\Set-GhqLocation.ps1"
-. $env:PSGhqPath
-Set-Alias -Name gcd -Value Set-GhqLocation
+if (Test-Path($env:PSGhqPath)) {
+    . $env:PSGhqPath
+    Set-Alias -Name gcd -Value Set-GhqLocation
+}
 
 # alias update_cargo_package
 $env:UpdateCargoPackagePath = "$env:GHQ_ROOT\github.com\mimikun\update_cargo_packages\Invoke-UpdateCargoPackage.ps1"
-. $env:UpdateCargoPackagePath
-Set-Alias -Name update_cargo_package -Value Invoke-UpdateCargoPackage
+if (Test-Path($env:UpdateCargoPackagePath)) {
+    . $env:UpdateCargoPackagePath
+    Set-Alias -Name update_cargo_package -Value Invoke-UpdateCargoPackage
+}
 
 # alias pueue_update_cargo_package
 $env:PueueUpdateCargoPackagePath = "$env:GHQ_ROOT\github.com\mimikun\update_cargo_packages\Invoke-PueueUpdateCargoPackage.ps1"
-. $env:PueueUpdateCargoPackagePath
-Set-Alias -Name pueue_update_cargo_package -Value Invoke-PueueUpdateCargoPackage
+if (Test-Path($env:PueueUpdateCargoPackagePath)) {
+    . $env:PueueUpdateCargoPackagePath
+    Set-Alias -Name pueue_update_cargo_package -Value Invoke-PueueUpdateCargoPackage
+}
 
 # alias vup
 $env:VupPath = "$env:GHQ_ROOT\github.com\mimikun\vup\Invoke-Vup.ps1"
-. $env:VupPath
-Set-Alias -Name vup -Value Invoke-Vup
+if (Test-Path($env:VupPath)) {
+    . $env:VupPath
+    Set-Alias -Name vup -Value Invoke-Vup
+}
 
 # alias vupueue
 $env:VupueuePath = "$env:GHQ_ROOT\github.com\mimikun\vup\Invoke-Vupueue.ps1"
-. $env:VupueuePath
-Set-Alias -Name vupueue -Value Invoke-Vupueue
+if (Test-Path($env:VupueuePath)) {
+    . $env:VupueuePath
+    Set-Alias -Name vupueue -Value Invoke-Vupueue
+}
 
 # alias chezmoi_cd
 function Set-ChezmoiDirLocation() {
@@ -74,3 +87,11 @@ function Set-ChezmoiDirLocation() {
 }
 Set-Alias -Name chezmoi_cd -Value Set-ChezmoiDirLocation
 
+# pueued auto start
+Get-Process pueued -ErrorAction Ignore | Out-Null
+$res = $?
+if ($res) {
+    Write-Output "pueued is now running!"
+} else {
+    pueued -d
+}
