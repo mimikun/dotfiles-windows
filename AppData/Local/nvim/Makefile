@@ -1,5 +1,5 @@
 today   = $(shell date "+%Y%m%d")
-product_name = nvim
+product_name = nvim-for-win
 gpg_pub_key = CCAA9E0638DF9088BB624BC37C0F8AD3FB3938FC
 
 .PHONY : patch
