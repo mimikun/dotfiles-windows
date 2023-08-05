@@ -7,7 +7,7 @@ Invoke-Expression (wezterm shell-completion --shell power-shell | Out-String)
 # rustup completion
 Invoke-Expression (rustup completions powershell | Out-String)
 # just completion
-Invoke-Expression (just --completions powershell | Out-String)
+#Invoke-Expression (just --completions powershell | Out-String)
 # chezmoi
 Invoke-Expression (chezmoi completion powershell | Out-String)
 # github-cli
@@ -40,6 +40,7 @@ Get-Command exa -ErrorAction Ignore | Out-Null
 $res = $?
 if ($res) {
     # alias ls exa
+    Remove-Item -Path Alias:ls
     Set-Alias -Name ls -Value exa
     # exa aliases
     Set-Alias -Name lt -Value "exa -T"
