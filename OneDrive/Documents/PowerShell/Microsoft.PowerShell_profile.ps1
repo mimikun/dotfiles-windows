@@ -90,8 +90,6 @@ Set-Alias -Name chezmoi_cd -Value Set-ChezmoiDirLocation
 # pueued auto start
 Get-Process pueued -ErrorAction Ignore | Out-Null
 $res = $?
-if ($res) {
-    Write-Output "pueued is now running!"
-} else {
+if (!$res) {
     pueued -d
 }
