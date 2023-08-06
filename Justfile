@@ -29,6 +29,11 @@ clean :
 update : clean
     .\scripts\update.ps1
 
+sync : sync-powershell-profile
+
+sync-powershell-profile : clean
+    .\scripts\sync-powershell-profile.ps1
+
 copy2win-patch-raw :
     .\scripts\copy2win-patch.ps1
 
