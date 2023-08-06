@@ -1,3 +1,4 @@
+# completions setup
 # starship setup
 Invoke-Expression (starship init powershell --print-full-init | Out-String)
 # starship completion
@@ -6,12 +7,16 @@ Invoke-Expression (starship completions powershell | Out-String)
 Invoke-Expression (wezterm shell-completion --shell power-shell | Out-String)
 # rustup completion
 Invoke-Expression (rustup completions powershell | Out-String)
-# just completion
-Invoke-Expression (just --completions powershell | Out-String)
 # chezmoi
 Invoke-Expression (chezmoi completion powershell | Out-String)
 # github-cli
 Invoke-Expression (gh completion -s powershell | Out-String)
+# just completion
+# Powershell v7以上のときのみ読み込む
+if ($True) {
+    Invoke-Expression (just --completions powershell | Out-String)
+}
+
 # gsudo
 Import-Module gsudoModule
 #posh-git git
@@ -43,10 +48,17 @@ Get-Command exa -ErrorAction Ignore | Out-Null
 $res = $?
 if ($res) {
     # alias ls exa
+    Remove-Item -Path Alias:ls
     Set-Alias -Name ls -Value exa
     # exa aliases
-    Set-Alias -Name lt -Value "exa -T"
-    Set-Alias -Name la -Value "exa -la"
+    function Invoke-ExaTree() {
+        exa -T
+    }
+    Set-Alias -Name lt -Value Invoke-ExaTree
+    function Invoke-ExaLa() {
+        exa -la
+    }
+    Set-Alias -Name la -Value Invoke-ExaLa
 }
 
 # alias gcd
