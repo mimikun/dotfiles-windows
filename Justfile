@@ -41,19 +41,20 @@ test : lint
 lint : stylua-lint pwsh_test textlint typo_check
 
 stylua-lint :
+    @Write-Output "Run stylua --check"
     stylua --check .\
 
 pwsh_test :
-        Write-Output "Run PowerShell ScriptAnalyzer"
-        Invoke-ScriptAnalyzer ./*
+    @Write-Output "Run PowerShell ScriptAnalyzer"
+    Invoke-ScriptAnalyzer ./*
 
 textlint :
-        Write-Output "Run textlint"
-        pnpm run lint
+    @Write-Output "Run textlint"
+    pnpm run lint
 
 typo_check :
-        Write-Output "Run typos-cli"
-        typos .
+    @Write-Output "Run typos-cli"
+    typos .
 
 format : stylua-format
 
@@ -67,5 +68,5 @@ stylua-format :
 copy2win-release : release
     .\scripts\copy2win-release.ps1
 
-release : 
+release :
     .\scripts\create-release.ps1
