@@ -7,6 +7,7 @@ win_download := "$env:USERPROFILE/Downloads/"
 default :
     @just --list
 
+alias pat := patch
 patch : clean diff-patch copy2win-patch
 
 diff-patch-raw :
@@ -14,12 +15,15 @@ diff-patch-raw :
 
 diff-patch : diff-patch-raw
 
+alias pab := patch-branch
+alias pb := patch-branch
 patch-branch :
     git switch -c patch-{{today}}
 
 switch-master :
     git switch master
 
+alias delb := delete-branch
 delete-branch : switch-master
     git branch --list "patch*" | ForEach-Object{ $_ -replace " ", "" } | ForEach-Object { git branch -D $_ }
 
