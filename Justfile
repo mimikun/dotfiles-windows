@@ -45,7 +45,7 @@ stylua-lint :
 
 pwsh_test :
         Write-Output "Run PowerShell ScriptAnalyzer"
-        Invoke-ScriptAnalyzer .
+        Invoke-ScriptAnalyzer ./*
 
 textlint :
         Write-Output "Run textlint"
