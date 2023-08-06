@@ -9,6 +9,10 @@ managed by [chezmoi](https://www.chezmoi.io/).
 
 WIP
 
+#### WSLの `/etc/wsl.conf` に配置する
+
+- `wsl.conf`
+
 ## Other documents
 
-WIP
+- [nvim](AppData\Local\nvim\README.md)
