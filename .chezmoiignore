@@ -3,6 +3,7 @@
 .editorconfig
 .gitignore
 .textlintrc.json
+.textlintcache
 
 # dot dir
 .github
@@ -17,10 +18,10 @@ pnpm-lock.yaml
 PSScriptAnalyzerSettings.psd1
 README.md
 stylua.toml
-TODO.md
 typos.toml
 
 # normal dir
 scripts
+node_modules
 AppData/Local/nvim/scripts
 AppData/Local/nvim/Makefile
