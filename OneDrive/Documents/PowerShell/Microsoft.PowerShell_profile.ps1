@@ -35,6 +35,9 @@ Set-Alias -Name bd -Value Set-ParentLocation
 # alias touch
 Set-Alias -Name touch -Value New-Item
 
+# alias make
+Set-Alias -Name make -Value just
+
 # alias ls (lsd or exa)
 Get-Command exa -ErrorAction Ignore | Out-Null
 $res = $?
