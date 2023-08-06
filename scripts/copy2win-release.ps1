@@ -1,4 +1,4 @@
-# copy release script
+﻿# copy release script
 # リリースをコピーするスクリプト
 $TempMyOutputEncode=[System.Console]::OutputEncoding
 [System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8

@@ -1,4 +1,4 @@
-# create release script
+﻿# create release script
 # リリースを作成するスクリプト
 $TempMyOutputEncode=[System.Console]::OutputEncoding
 [System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8
@@ -15,5 +15,6 @@ $release_file = "$repo_name.$today.zip"
 #Set-GhqLocation.ps1
 
 Write-Output "Sorry, this is WIP!!"
+Write-Output $release_file | Out-Null
 
 [System.Console]::OutputEncoding=$TempMyOutputEncode

@@ -1,6 +1,6 @@
 . %userprofile%\TrexPasswordClass.ps1
 $MyClass = New-Object MyClass;
-$LoginPassword = $MyClass.GetPassword(); 
+$LoginPassword = $MyClass.GetPassword();
 
 $LoginUrl = "http://127.0.0.1:4067/login?password=$($LoginPassword)"
 
