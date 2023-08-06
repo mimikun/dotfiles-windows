@@ -19,6 +19,7 @@ PSScriptAnalyzerSettings.psd1
 README.md
 stylua.toml
 typos.toml
+wsl.conf
 
 # normal dir
 scripts
