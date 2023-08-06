@@ -8,7 +8,8 @@
       "max-kanji-continuous-len": {
         "max": 10
       },
-      "ja-no-redundant-expression": false
+      "ja-no-redundant-expression": false,
+      "ja-no-mixed-period": false
     }
   }
 }
