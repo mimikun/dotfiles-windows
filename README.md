@@ -13,6 +13,10 @@ WIP
 
 - `wsl.conf`
 
+#### WSLの `/usr/lib/binfmt.d/WSLInterop.conf` に配置する
+
+- `WSLInterop.conf`
+
 ## Other documents
 
 - [nvim](AppData\Local\nvim\README.md)
