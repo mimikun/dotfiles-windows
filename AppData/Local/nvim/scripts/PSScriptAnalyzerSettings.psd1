@@ -1,0 +1,6 @@
+﻿@{
+    ExcludeRules = @(
+        'PSAvoidUsingInvokeExpression',
+        'PSUseShouldProcessForStateChangingFunctions'
+    )
+}
