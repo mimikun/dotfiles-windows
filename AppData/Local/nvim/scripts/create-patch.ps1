@@ -1,4 +1,4 @@
-# create patch script
+﻿# create patch script
 # パッチを作成するスクリプト
 $TempMyOutputEncode=[System.Console]::OutputEncoding
 [System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8
