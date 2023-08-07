@@ -5,6 +5,7 @@
 ### Added - 新機能について
 
 - Add PSSA config
+- Add WSLInterop.conf
 
 ### Changed - 既存機能の変更について
 
