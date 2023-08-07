@@ -19,4 +19,4 @@ WIP
 
 ## Other documents
 
-- [nvim](AppData\Local\nvim\README.md)
+- [nvim](AppData/Local/nvim/README.md)
