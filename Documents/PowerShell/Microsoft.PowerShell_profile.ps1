@@ -11,6 +11,14 @@ Invoke-Expression (rustup completions powershell | Out-String)
 Invoke-Expression (chezmoi completion powershell | Out-String)
 # github-cli
 Invoke-Expression (gh completion -s powershell | Out-String)
+# zoxide setup
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+# zoxide completion
+$env:ZoxideCompletePath = "$env:GHQ_ROOT\github.com\ajeetdsouza\zoxide\contrib\completions\_zoxide.ps1"
+if (Test-Path($env:ZoxideCompletePath)) {
+    . $env:ZoxideCompletePath
+}
+
 # just completion
 # Powershell v7以上のときのみ読み込む
 if ($True) {
