@@ -21,9 +21,10 @@ stylua.toml
 typos.toml
 wsl.conf
 WSLInterop.conf
+AppData/Local/nvim/Makefile
+vimfiles/Makefile
 
 # normal dir
 scripts
 node_modules
 AppData/Local/nvim/scripts
-AppData/Local/nvim/Makefile
