@@ -69,6 +69,14 @@ if ($res) {
     Set-Alias -Name la -Value Invoke-ExaLa
 }
 
+# alias vim
+Get-Command neovim -ErrorAction Ignore | Out-Null
+$res = $?
+if ($res) {
+    # alias vim neovim
+    Set-Alias -Name vim -Value neovim
+}
+
 # alias gcd
 $env:PSGhqPath = "$env:GHQ_ROOT\github.com\mimikun\PSGhq\Set-GhqLocation.ps1"
 if (Test-Path($env:PSGhqPath)) {
