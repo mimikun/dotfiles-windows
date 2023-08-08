@@ -1,4 +1,4 @@
-﻿# copy patch script
+# copy patch script
 # パッチをコピーするスクリプト
 $TempMyOutputEncode=[System.Console]::OutputEncoding
 [System.Console]::OutputEncoding=[System.Text.Encoding]::UTF8
