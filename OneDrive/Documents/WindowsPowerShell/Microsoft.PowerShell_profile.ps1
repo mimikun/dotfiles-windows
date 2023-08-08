@@ -1,4 +1,4 @@
-﻿# completions setup
+# commands setup
 # starship setup
 Invoke-Expression (starship init powershell --print-full-init | Out-String)
 # starship completion
@@ -11,6 +11,14 @@ Invoke-Expression (rustup completions powershell | Out-String)
 Invoke-Expression (chezmoi completion powershell | Out-String)
 # github-cli
 Invoke-Expression (gh completion -s powershell | Out-String)
+# zoxide setup
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+# zoxide completion
+$env:ZoxideCompletePath = "$env:GHQ_ROOT\github.com\ajeetdsouza\zoxide\contrib\completions\_zoxide.ps1"
+if (Test-Path($env:ZoxideCompletePath)) {
+    . $env:ZoxideCompletePath
+}
+
 # just completion
 # Powershell v7以上のときのみ読み込む
 if ($True) {
@@ -59,6 +67,14 @@ if ($res) {
         exa -la
     }
     Set-Alias -Name la -Value Invoke-ExaLa
+}
+
+# alias vim
+Get-Command neovim -ErrorAction Ignore | Out-Null
+$res = $?
+if ($res) {
+    # alias vim neovim
+    Set-Alias -Name vim -Value neovim
 }
 
 # alias gcd
