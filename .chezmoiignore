@@ -4,6 +4,8 @@
 .gitignore
 .textlintrc.json
 .textlintcache
+*.patch
+*.zip
 
 # dot dir
 .github
