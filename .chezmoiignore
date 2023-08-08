@@ -25,6 +25,8 @@ wsl.conf
 WSLInterop.conf
 AppData/Local/nvim/Makefile
 vimfiles/Makefile
+AppData/Local/nvim/*.zip
+vimfiles/Makefile/*.zip
 
 # normal dir
 scripts
