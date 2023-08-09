@@ -27,6 +27,7 @@ AppData/Local/nvim/Makefile
 vimfiles/Makefile
 AppData/Local/nvim/*.zip
 vimfiles/Makefile/*.zip
+tasks.ps1
 
 # normal dir
 scripts
