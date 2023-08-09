@@ -1,5 +1,31 @@
 # Changelog
 
+## [v2023.08.09]
+
+### Added - 新機能について
+
+- Add .config/wezterm/stylua.toml
+- 自作のタスクランナーを追加した
+
+### Changed - 既存機能の変更について
+
+- Update wezterm config
+    - コメントを詳細に書いた
+    - LEADER + m でランチャーメニューが出るようにした
+- Update PowerShell config
+    - WSLを再起動するコマンドを追加した
+- Sync: Update PowerShell config
+- Sync: vim config
+- Sync: neovim config
+
+### Removed - 今回で削除された機能について
+
+- Justは遅くて使い物にならないので削除
+
+### Fixed - 不具合修正について
+
+なし
+
 ## [v2023.08.08]
 
 ### Added - 新機能について
@@ -90,3 +116,22 @@
 ### Fixed - 不具合修正について
 
 - Fix PSSA error
+
+## [v2023.mm.dd]
+
+### Added - 新機能について
+
+なし
+
+### Changed - 既存機能の変更について
+
+なし
+
+### Removed - 今回で削除された機能について
+
+なし
+
+### Fixed - 不具合修正について
+
+なし
+
