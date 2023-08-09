@@ -79,19 +79,25 @@ config.colors = {
 -- leader keyを CTRL + qにマッピング
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
-    -- CMD + Tでタブを新規作成
+    -- LEADER + mでLauncher Menuを開く
+    {
+        key = "m",
+        mods = "LEADER",
+        action = wezterm.action.ShowLauncher,
+    },
+    -- LEADER + tでタブを新規作成
     {
         key = "t",
         mods = "LEADER",
         action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
     },
-    -- CMD + Wでタブを閉じる
+    -- LEADER + wでタブを閉じる
     {
         key = "w",
         mods = "LEADER",
         action = wezterm.action({ CloseCurrentTab = { confirm = true } }),
     },
-    -- CTRL + q + numberでタブの切り替え
+    -- LEADER + numberでタブの切り替え
     {
         key = "1",
         mods = "LEADER",
@@ -137,20 +143,20 @@ config.keys = {
         mods = "LEADER",
         action = wezterm.action({ ActivateTab = 8 }),
     },
-    -- PANEを水平方向に開く
+    -- LEADER + - でPANEを水平方向に開く
     {
         key = "-",
         mods = "LEADER",
         action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
     },
-    -- PANEを縦方向に開く
+    -- LEADER + \\ でPANEを縦方向に開く
     {
         -- | は入力がうまくいかないのでバックスラッシュのキーに置き換える
         key = "\\",
         mods = "LEADER",
         action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
     },
-    -- hjklでPANEを移動する
+    -- LEADER + hjklでPANEを移動する
     {
         key = "h",
         mods = "LEADER",
@@ -171,8 +177,12 @@ config.keys = {
         mods = "LEADER",
         action = wezterm.action({ ActivatePaneDirection = "Down" }),
     },
-    -- PANEを閉じる
-    { key = "x", mods = "ALT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+    -- LEADER + x でPANEを閉じる
+    {
+        key = "x",
+        mods = "ALT",
+        action = wezterm.action({ CloseCurrentPane = { confirm = true } }),
+    },
     -- ALT + hjklでペインの幅を調整する
     {
         key = "h",
@@ -194,7 +204,7 @@ config.keys = {
         mods = "ALT",
         action = wezterm.action({ AdjustPaneSize = { "Down", 5 } }),
     },
-    -- QuickSelect・・・画面に表示されている文字をクイックにコピペできる機能
+    -- SHIFT + Enter でQuickSelect・・・画面に表示されている文字をクイックにコピペできる機能
     {
         key = "Enter",
         mods = "SHIFT",
