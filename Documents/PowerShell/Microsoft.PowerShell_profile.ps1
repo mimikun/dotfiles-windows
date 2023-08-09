@@ -124,3 +124,13 @@ $res = $?
 if (!$res) {
     pueued -d
 }
+
+# alias wsl_restart Invoke-WslTerminateUbuntu
+function Invoke-WslTerminateUbuntu() {
+    if ($env:COMPUTERNAME == "TANAKAPC") {
+        wsl --terminate Ubuntu-20.04
+    } else {
+        wsl --terminate Ubuntu
+    }
+}
+Set-Alias -Name wsl_restart Invoke-WslTerminateUbuntu
