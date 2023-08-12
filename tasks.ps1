@@ -114,9 +114,6 @@ function Invoke-FileUpdate() {
     chezmoi add $env:USERPROFILE\AppData\Local\contour\contour.yml
 
     # neovim config
-    chezmoi add $env:USERPROFILE\AppData\Local\nvim\Justfile
-    chezmoi add $env:USERPROFILE\AppData\Local\nvim\README.md
-    chezmoi add $env:USERPROFILE\AppData\Local\nvim\coc-settings.json
     chezmoi add $env:USERPROFILE\AppData\Local\nvim\init.lua
     chezmoi add $env:USERPROFILE\AppData\Local\nvim\lazy-lock.json
     chezmoi add $env:USERPROFILE\AppData\Local\nvim\lua\event_learn_support.lua
