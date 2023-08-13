@@ -1,4 +1,4 @@
-# commands setup
+﻿# commands setup
 # starship setup
 Invoke-Expression (starship init powershell --print-full-init | Out-String)
 # starship completion
@@ -127,7 +127,7 @@ if (!$res) {
 
 # alias wsl_restart Invoke-WslTerminateUbuntu
 function Invoke-WslTerminateUbuntu() {
-    if ($env:COMPUTERNAME == "TANAKAPC") {
+    if ($env:COMPUTERNAME -eq "TANAKAPC") {
         wsl --terminate Ubuntu-20.04
     } else {
         wsl --terminate Ubuntu
