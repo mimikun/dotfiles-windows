@@ -10,6 +10,7 @@
 
 - Update lazy-lock.json
 - Sync: Update PowerShell config
+- Sync: neovim config
 
 ### Removed - 今回で削除された機能について
 
