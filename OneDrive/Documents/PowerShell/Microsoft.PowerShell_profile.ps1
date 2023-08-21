@@ -1,4 +1,4 @@
-﻿# commands setup
+# commands setup
 # starship setup
 Invoke-Expression (starship init powershell --print-full-init | Out-String)
 # starship completion
@@ -21,7 +21,8 @@ if (Test-Path($env:ZoxideCompletePath)) {
 
 # just completion
 # Powershell v7以上のときのみ読み込む
-if ($True) {
+$ver = $PSVersionTable.PSVersion.Major
+if ($ver -eq 7) {
     Invoke-Expression (just --completions powershell | Out-String)
 }
 
