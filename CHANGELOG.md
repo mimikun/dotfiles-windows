@@ -1,5 +1,30 @@
 # Changelog
 
+## [v2023.08.22]
+
+### Added - 新機能について
+
+- Add `core.filemode = false` to .gitconfig
+
+### Changed - 既存機能の変更について
+
+- Update lazy-lock.json
+- Update PowerShell config
+    - Add Invoke-GenerateEditorConfig
+- Update tasks.ps1
+    - 今何を実行しているかわかりやすくした
+- Improved tasks.ps1
+    - 各ps1ファイルに対してPSSAを実行する
+- Sync: Update PowerShell config
+
+### Removed - 今回で削除された機能について
+
+なし
+
+### Fixed - 不具合修正について
+
+なし
+
 ## [v2023.08.21]
 
 ### Added - 新機能について
