@@ -93,7 +93,7 @@ function Invoke-CreatePatch() {
         Invoke-DiffPatch -UseGpg
         Invoke-Copy2WinPatch -UseGpg
     } else {
-        Invoke-DiffPacth
+        Invoke-DiffPatch
         Invoke-Copy2WinPatch
     }
 }
@@ -267,21 +267,33 @@ function Invoke-Lint() {
 
 ## stylua-lint
 function Invoke-StyluaLint() {
+    Write-Output "Run stylua check"
     stylua --check .\
 }
 
 ## pwsh-test
 function Invoke-PwshTest() {
-    Invoke-ScriptAnalyzer .\*
+    Write-Output "Run PSSA"
+    Get-ChildItem -Recurse |
+        Where-Object {
+            $_.Name -match "\.ps1$" -and
+            $_.FullName -notmatch "\\node_modules\\"
+        } |
+        ForEach-Object {
+            Write-Output $_.FullName
+            Invoke-ScriptAnalyzer $_.FullName
+        }
 }
 
 ## textlint
 function Invoke-Textlint() {
+    Write-Output "Run textlint"
     pnpm run lint
 }
 
 ## typo-check
 function Invoke-TypoCheck() {
+    Write-Output "Run typo check"
     typos .\
 }
 
@@ -292,6 +304,7 @@ function Invoke-CodeFormat() {
 
 ## stylua-format
 function Invoke-StyluaFormat() {
+    Write-Output "Run stylua format"
     stylua .\
 }
 
