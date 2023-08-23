@@ -113,12 +113,6 @@ if (Test-Path($env:VupueuePath)) {
     Set-Alias -Name vupueue -Value Invoke-Vupueue
 }
 
-# alias chezmoi_cd
-function Set-ChezmoiDirLocation() {
-    Set-Location $env:CHEZMOI_DIR
-}
-Set-Alias -Name chezmoi_cd -Value Set-ChezmoiDirLocation
-
 # pueued auto start
 Get-Process pueued -ErrorAction Ignore | Out-Null
 $res = $?
