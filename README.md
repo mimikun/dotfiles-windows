@@ -9,6 +9,13 @@ managed by [chezmoi](https://www.chezmoi.io/).
 
 WIP
 
+#### `%USERPROFILE%\.config\chezmoi\chezmoi.toml` 
+
+```toml
+[cd]
+    command = "pwsh.exe"
+```
+
 #### WSLの `/etc/wsl.conf` に配置する
 
 - `wsl.conf`
