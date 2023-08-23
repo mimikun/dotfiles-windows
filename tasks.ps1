@@ -17,6 +17,15 @@ $home_only_file =@(
     '$env:USERPROFILE\utilities\miniz-flux-mining.bat'
     '$env:USERPROFILE\utilities\t-rex-mining.bat'
 )
+$work_powershell_profile = "Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+$home_powershell_profile = "OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+
+# utils
+## fixencoding
+function Invoke-FixEncoding() {
+    # ps1ファイルをUTF-8 with BOMに変える
+    Write-Output "THIS IS WIP"
+}
 
 # patch
 ## patch-branch
@@ -241,6 +250,31 @@ function Invoke-FileUpdate() {
                 }
             }
     }
+
+    Invoke-FixEncoding
+}
+
+## sync-conf
+function Invoke-SyncConf() {
+    param(
+        [switch]$Sync
+    )
+    if (!$Sync) {
+        Write-Output "-Sync をつけて実行してください"
+        return
+    }
+    # 家と会社で動作を分ける
+    if ($env:COMPUTERNAME -ne "TANAKAPC") {
+        # 家の場合
+        Copy-Item -Path $home_powershell_profile -Destination "./OneDrive/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+        Copy-Item -Path $home_powershell_profile -Destination "./Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+        Copy-Item -Path $home_powershell_profile -Destination "./Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+    } else {
+        # 会社の場合
+        Copy-Item -Path $work_powershell_profile -Destination "./Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+        Copy-Item -Path $work_powershell_profile -Destination "./OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+        Copy-Item -Path $work_powershell_profile -Destination "./OneDrive/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
+    }
 }
 
 ## apply
@@ -255,6 +289,11 @@ function Invoke-ChezmoiApply() {
         chezmoi apply
     }
     Invoke-FileClean
+}
+
+## apply-patch
+function Invoke-ApplyPatch() {
+    git-bash
 }
 
 ## lint
@@ -313,7 +352,9 @@ Set-Alias -Name pab -Value Invoke-CreatePatchBranch
 Set-Alias -Name clean -Value Invoke-FileClean
 Set-Alias -Name update -Value Invoke-FileUpdate
 Set-Alias -Name deleb -Value Invoke-DeletePatchBranch
-Set-Alias -Name pat -Value Invoke-CreatePatch
+Set-Alias -Name patch -Value Invoke-CreatePatch
+Set-Alias -Name cpatch -Value Invoke-CreatePatch
+Set-Alias -Name apatch -Value Invoke-ApplyPatch
 Set-Alias -Name test -Value Invoke-Lint
 Set-Alias -Name fmt -Value Invoke-CodeFormat
 Set-Alias -Name apply -Value Invoke-ChezmoiApply
