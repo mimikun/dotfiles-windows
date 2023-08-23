@@ -1,5 +1,25 @@
 # Changelog
 
+## [v2023.08.23]
+
+### Added - 新機能について
+
+- Add Invoke-FixEncoding
+
+### Changed - 既存機能の変更について
+
+- Update tasks.ps1
+- Update lazy-lock.json
+- Sync: Update PowerShell config
+
+### Removed - 今回で削除された機能について
+
+- Remove chezmoi_cd alias
+
+### Fixed - 不具合修正について
+
+なし
+
 ## [v2023.08.22]
 
 ### Added - 新機能について
