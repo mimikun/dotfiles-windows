@@ -266,11 +266,13 @@ function Invoke-SyncConf() {
     # 家と会社で動作を分ける
     if ($env:COMPUTERNAME -ne "TANAKAPC") {
         # 家の場合
+        Write-Output "家の場合の処理"
         Copy-Item -Path $home_powershell_profile -Destination "./OneDrive/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
         Copy-Item -Path $home_powershell_profile -Destination "./Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
         Copy-Item -Path $home_powershell_profile -Destination "./Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
     } else {
         # 会社の場合
+        Write-Output "会社の場合の処理"
         Copy-Item -Path $work_powershell_profile -Destination "./Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
         Copy-Item -Path $work_powershell_profile -Destination "./OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
         Copy-Item -Path $work_powershell_profile -Destination "./OneDrive/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1"
@@ -293,6 +295,8 @@ function Invoke-ChezmoiApply() {
 
 ## apply-patch
 function Invoke-ApplyPatch() {
+    Write-Output "Open git-bash"
+    Write-Output "Run: patch -p1 < $windl\path_to.patch"
     git-bash
 }
 
@@ -358,3 +362,4 @@ Set-Alias -Name apatch -Value Invoke-ApplyPatch
 Set-Alias -Name test -Value Invoke-Lint
 Set-Alias -Name fmt -Value Invoke-CodeFormat
 Set-Alias -Name apply -Value Invoke-ChezmoiApply
+Set-Alias -Name syncconf -Value Invoke-SyncConf
