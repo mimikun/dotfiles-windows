@@ -1,0 +1,7 @@
+export EDITOR=nvim
+export GHQ_ROOT=~/ghq
+export GHQ_SELECTOR=fzf
+export TZ="Asia/Tokyo"
+
+alias vim=nvim
+alias patch="patch -p1 <"

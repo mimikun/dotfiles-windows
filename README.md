@@ -9,6 +9,17 @@ managed by [chezmoi](https://www.chezmoi.io/).
 
 WIP
 
+#### `C:\Program Files\Git\etc\bash.bashrc`
+
+末尾にこれを加える
+
+```bash
+# System-wide bashrc file
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+```
+
 #### `%USERPROFILE%\.config\chezmoi\chezmoi.toml` 
 
 ```toml
