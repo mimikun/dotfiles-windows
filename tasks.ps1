@@ -279,20 +279,6 @@ function Invoke-SyncConf() {
     }
 }
 
-## apply
-function Invoke-ChezmoiApply() {
-    param(
-        [switch]$DryRun
-    )
-
-    if ($DryRun) {
-        chezmoi apply --dry-run
-    } else {
-        chezmoi apply
-    }
-    Invoke-FileClean
-}
-
 ## apply-patch
 function Invoke-ApplyPatch() {
     Write-Output "Open git-bash"
@@ -361,5 +347,4 @@ Set-Alias -Name cpatch -Value Invoke-CreatePatch
 Set-Alias -Name apatch -Value Invoke-ApplyPatch
 Set-Alias -Name test -Value Invoke-Lint
 Set-Alias -Name fmt -Value Invoke-CodeFormat
-Set-Alias -Name apply -Value Invoke-ChezmoiApply
 Set-Alias -Name syncconf -Value Invoke-SyncConf

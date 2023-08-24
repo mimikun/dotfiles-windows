@@ -25,6 +25,10 @@ fi
 ```toml
 [cd]
     command = "pwsh.exe"
+
+[hooks.apply.post]
+command = "pwsh"
+args = ["-c", "& {Invoke-RunAfterChezmoiApply}"]
 ```
 
 #### WSLの `/etc/wsl.conf` に配置する
