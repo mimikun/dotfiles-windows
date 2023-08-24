@@ -11,6 +11,9 @@
 - Update lazy-lock.json
 - Update tasks.ps1
 - Sync: .gitconfig
+- Sync with Linux pvim config
+- Sync with Linux nvim config
+- Update pvim coc-settings.json
 
 ### Removed - 今回で削除された機能について
 
