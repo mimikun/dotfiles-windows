@@ -26,6 +26,10 @@ fi
 [cd]
     command = "pwsh.exe"
 
+[hooks.apply.pre]
+command = "pwsh"
+args = ["-c", "& {Invoke-RunBeforeChezmoiApply}"]
+
 [hooks.apply.post]
 command = "pwsh"
 args = ["-c", "& {Invoke-RunAfterChezmoiApply}"]
