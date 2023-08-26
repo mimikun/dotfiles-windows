@@ -1,4 +1,4 @@
-# original task define powershell scripts
+﻿# original task define powershell scripts
 
 # global vars
 $repo_name = "dotfiles-windows"
