@@ -24,7 +24,23 @@ $home_powershell_profile = "OneDrive\Documents\PowerShell\Microsoft.PowerShell_p
 ## fixencoding
 function Invoke-FixEncoding() {
     # ps1ファイルをUTF-8 with BOMに変える
-    Write-Output "THIS IS WIP"
+    $home_pwsh_config_path = "OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+    $home_powershell_config_path = "OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+    $work_pwsh_config_path = "Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
+    $work_powershell_config_path = "Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+    $taskfile_path = "tasks.ps1"
+
+    $home_pwsh_config_file = Get-Content -Path $home_pwsh_config_path
+    $home_powershell_config_file = Get-Content -Path $home_powershell_config_path
+    $work_pwsh_config_file = Get-Content -Path $work_pwsh_config_path
+    $work_powershell_config_file = Get-Content -Path $work_powershell_config_path
+    $taskfile_file = Get-Content -Path $taskfile_path
+
+    Set-Content -Path $home_pwsh_config_path -Value $home_pwsh_config_file -Encoding "utf8BOM"
+    Set-Content -Path $home_powershell_config_path -Value $home_powershell_config_file -Encoding "utf8BOM"
+    Set-Content -Path $work_pwsh_config_path -Value $work_pwsh_config_file -Encoding "utf8BOM"
+    Set-Content -Path $work_powershell_config_path -Value $work_powershell_config_file -Encoding "utf8BOM"
+    Set-Content -Path $taskfile_path -Value $taskfile_file -Encoding "utf8BOM"
 }
 
 # patch
