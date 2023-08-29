@@ -23,5 +23,6 @@
         "vim"
       ]
     }
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
